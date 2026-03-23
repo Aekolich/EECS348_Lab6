@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EECS 348 Practice 2</title>
+    <style>
+        body {
+            background-color: #1a0033;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        #my-paragraph {
+            border-style: solid;
+            border-width: 5px;
+            border-color: white;
+            padding: 15px;
+            width: 80%;
+            color: white;
+        }
+
+        .controls-area {
+            margin-top: 20px;
+            border: 1px solid #555;
+            padding: 10px;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Practice Two: CSS Font Control</h1>
+
+    <p id="my-paragraph">
+        The Lion does not concern himself with aging.
+        The Lion will stay mentally young at the age of 21 forever.
+        The Lion does also not concern himself with logical reasoning. 
+        The Lion does as he pleases, and does not think about the consequences of his actions.
+        Consequences are for the weak, and the Lion is not weak. 
+    </p>
+
+    <div class="controls-area">
+        <h3>Border Color (RGB)</h3>
+        R: <input type="text" id="border_R" size="3">
+        G: <input type="text" id="border_G" size="3">
+        B: <input type="text" id="border_B" size="3">
+        <br><br>
+
+        <h3>Border Width</h3>
+        Width: <input type="text" id="border_width" size="10">
+        <br><br>
+
+        <h3>Font Color (RGB)</h3>
+        R: <input type="text" id="font_R" size="3">
+        G: <input type="text" id="font_G" size="3">
+        B: <input type="text" id="font_B" size="3">
+        <br><br>
+
+        <button onclick="applyChanges()">Apply Changes</button>
+    </div>
+
+    <script>
+        function applyChanges() {
+            var para = document.getElementById("my-paragraph");
+
+            var br = document.getElementById("border_R").value;
+            var bg = document.getElementById("border_G").value;
+            var bb = document.getElementById("border_B").value;
+            var bWidth = document.getElementById("border_width").value;
+
+            var fr = document.getElementById("font_R").value;
+            var fg = document.getElementById("font_G").value;
+            var fb = document.getElementById("font_B").value;
+
+            para.style.borderColor = "rgb(" + br + "," + bg + "," + bb + ")";
+            para.style.borderWidth = bWidth + "px";
+            para.style.color = "rgb(" + fr + "," + fg + "," + fb + ")";
+        }
+    </script>
+
+</body>
+
+</html>
